@@ -11,12 +11,12 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '356d6e30-3e7b-458c-af4d-25e5dcc05cd7'
-  imageRepository: 'ksapplication'
-  containerRegistry: 'ghostauacr.azurecr.io'
+  dockerRegistryServiceConnection: '1a13a4d8-1174-423b-86cd-b05edede2c88'
+  imageRepository: 'k8sapplication'
+  containerRegistry: 'myacr2020.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'ghostauacr8f8b-auth'
+  imagePullSecret: 'myacr2020-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -53,7 +53,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'ghostinthewiresk8sapplication.myakscluster-default'
+    environment: 'myacr2020k8sapplication.myakscluster'
     strategy:
       runOnce:
         deploy:
