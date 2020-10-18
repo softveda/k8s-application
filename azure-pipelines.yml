@@ -53,7 +53,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'myacr2020k8sapplication.myakscluster'
+    environment: 'myacr2020k8sapplication.default'
     strategy:
       runOnce:
         deploy:
