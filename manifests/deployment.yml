@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: ksapplication 
+  name: k8sapplication 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ksapplication
+      app: k8sapplication
   template:
     metadata:
       labels:
-        app: ksapplication 
+        app: k8sapplication 
     spec:
       containers:
-        - name: ksapplication 
-          image: ghostauacr.azurecr.io/ksapplication
+        - name: k8sapplication 
+          image: myacr2020.azurecr.io/k8sapplication
           ports:
           - containerPort: 8888
